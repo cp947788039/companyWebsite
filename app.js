@@ -83,7 +83,7 @@ app.get('/captcha', function(req, res) {
 require('./routes/index')(app);
 
 /*官网后台做操作是需要，登录验证*/
-app.use(function(req, res, next) {
+/* app.use(function(req, res, next) {
     if (!req.session.user) {
         if (req.url == "/login" || req.url == "/register") {
             next(); //如果请求的地址是登录则通过，进行下一个请求
@@ -93,7 +93,7 @@ app.use(function(req, res, next) {
     } else if (req.session.user) {
         next();
     }
-});
+}); */
 /*后台登录验证*/
 
 require('./routes/admin')(app);
